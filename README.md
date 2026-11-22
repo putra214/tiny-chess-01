@@ -1,8 +1,18 @@
-# tiny-chess-01 starter
+[![make.fun](https://make.fun/badge/tiny-chess-01.svg)](https://make.fun/bounty/tiny-chess-01)
+[![rank](https://make.fun/badge/tiny-chess-01/putra214/tiny-chess-01/rank.svg)](https://make.fun/bounty/tiny-chess-01)
+[![reward](https://make.fun/badge/tiny-chess-01/putra214/tiny-chess-01/reward.svg)](https://make.fun/bounty/tiny-chess-01)
 
-A working entry to fork: `main.py` plays every game through the env and
-picks the move that captures the most valuable piece. It is a template,
-not a contender. Replace its one-line choice with a real search.
+# tiny-chess-01
+
+A Python 3.13 stdlib-only chess engine in `main.py` (4,087 bytes,
+LZMA-compressed from the readable `engine_src.py`). Negamax alpha-beta
+with a fixed node budget (8,000 nodes/move, never a clock), iterative
+deepening, transposition table, MVV-LVA + killer move ordering,
+quiescence (captures + promotions, capped at 4 plies), material +
+piece-square tables, repetition and fifty-move detection. Deterministic:
+no time, no randomness, no `hash()` of strings.
+
+Built for [make.fun's "Build the strongest chess engine in 4 KB of Python"](https://make.fun/bounty/tiny-chess-01) bounty.
 
 ## The size rule
 
