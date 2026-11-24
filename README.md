@@ -4,13 +4,19 @@
 
 # tiny-chess-01
 
-A Python 3.13 stdlib-only chess engine in `main.py` (4,087 bytes,
-LZMA-compressed from the readable `engine_src.py`). Negamax alpha-beta
-with a fixed node budget (8,000 nodes/move, never a clock), iterative
-deepening, transposition table, MVV-LVA + killer move ordering,
-quiescence (captures + promotions, capped at 4 plies), material +
-piece-square tables, repetition and fifty-move detection. Deterministic:
-no time, no randomness, no `hash()` of strings.
+A Python 3.13 stdlib-only chess engine in `main.py` (4,047 bytes,
+LZMA-compressed from the readable `engine_src.py`). Principal variation
+search (PVS) with an MTD-bi driver, futility pruning, check extensions,
+internal iterative deepening (IID), null-move pruning, transposition
+table, MVV-LVA + killer move ordering, quiescence (captures +
+promotions, capped at 4 plies), material + piece-square tables,
+repetition avoidance and fifty-move detection. Fixed node budget
+(24,000 nodes/move, never a clock). Deterministic: no time, no
+randomness, no `hash()` of strings.
+
+Grade-local practice trial: Elo 1,279 (3 wins, 0 draws, 3 losses) —
+first win against the depth-4 house engine, above the 1,154 final
+floor.
 
 Built for [make.fun's "Build the strongest chess engine in 4 KB of Python"](https://make.fun/bounty/tiny-chess-01) bounty.
 
